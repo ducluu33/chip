@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoplay Video</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="myVideo" autoplay MUTED loop>
+        <source src="Christmas Tree VFX.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <audio id="myAudio" autoplay loop>
+        <source src="Mariah Carey All I Want for Christmas Is You.mp3" type="audio/mpeg"> <!-- Use your audio file here -->
+        Your browser does not support the audio tag.
+    </audio>
+    <div id="error-message" style="display: none;">
+        <p>Sorry, the video could not be loaded.</p>
+    </div>
+
+    <script>
+        // Error handling for the video
+        const video = document.getElementById('myVideo');
+        video.onerror = function() {
+            video.style.display = 'none';
+            document.getElementById('error-message').style.display = 'block';
+        };
+    </script>
+
+</body>
+</html>
